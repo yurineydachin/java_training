@@ -22,7 +22,6 @@ public class Book {
         this.publisher.addBook(this);
     }
     public int calcPrice( ){
-        int sal = this.pageCount * this.publisher.pagePrice; //rub
-        return sal;
+        return this.pageCount * this.publisher.pagePrice; //rub
     }
 }
