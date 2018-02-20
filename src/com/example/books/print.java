@@ -8,11 +8,11 @@ public class print {
         // int k = 1;
         HashMap<Integer, Integer> year = new HashMap<Integer, Integer>();
         for (Book b: bookList){
-            if (year.containsKey(b.year) == true) {
-                year.put(b.year, year.get(b.year)+ 1 );
+            if (year.containsKey(b.getYear()) == true) {
+                year.put(b.getYear(), year.get(b.getYear())+ 1 );
             }
             else {
-                year.put(b.year, 1);
+                year.put(b.getYear(), 1);
             }
         }
         for(Integer key: year.keySet()){
@@ -22,9 +22,9 @@ public class print {
     }
 
 
-    static void printCategoryReport(ArrayList<Category> cat, ArrayList<Book> bookList){
-            for (Category c: cat){
-                System.out.println(c.name+ ": " + c.booksCount());  // use category.booksCount() new method
+    static void printCategoryReport(HashMap<Integer, Category> category){
+            for (Category c: category.values()){
+                System.out.println(c.getName()+ ": " + c.booksCount());  // use category.booksCount() new method
              }
         System.out.println("  ");
     }
@@ -34,11 +34,11 @@ public class print {
 
         HashMap<String, Integer> authors = new HashMap<String, Integer>();
         for (Book b: bookList){
-            if (authors.containsKey(b.author.name) == true) {
-                authors.put(b.author.name, authors.get(b.author.name)+ 1 );
+            if (authors.containsKey(b.getAuthor().getName()) == true) {
+                authors.put(b.getAuthor().getName(), authors.get(b.getAuthor().getName())+ 1 );
             }
             else {
-                authors.put(b.author.name, 1);
+                authors.put(b.getAuthor().getName(), 1);
             }
         }
         for(String key: authors.keySet()){
@@ -53,11 +53,11 @@ public class print {
     static void printAuthorHaveBookMore2(ArrayList<Book> bookList){
         HashMap<String, Integer> authors = new HashMap<String, Integer>();
         for (Book b: bookList){
-            if (authors.containsKey(b.author.name +": " + b.year) == true) {
-                authors.put(b.author.name +": " + b.year, authors.get(b.author.name +": " + b.year)+ 1 );
+            if (authors.containsKey(b.getAuthor().getName() +": " + b.getYear()) == true) {
+                authors.put(b.getAuthor().getName() +": " + b.getYear(), authors.get(b.getAuthor().getName() +": " + b.getYear())+ 1 );
             }
             else {
-                authors.put(b.author.name +": " + b.year, 1);
+                authors.put(b.getAuthor().getName() +": " + b.getYear(), 1);
             }
         }
         for(String key: authors.keySet()){

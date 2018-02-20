@@ -3,9 +3,9 @@ package com.example.books;
 import java.util.ArrayList;
 
 public class Category implements BookContainer {
-    public  String name;
-    public  int id;
-    public ArrayList books = new ArrayList();
+    private   String name;
+    private   int id;
+    private ArrayList books = new ArrayList();
 
     public Category(String name, int id){
         this.name = name;
@@ -21,14 +21,14 @@ public class Category implements BookContainer {
        return getBooks().size();
 
     }
-
-    public static void setBooks( ArrayList<Category> categoryList, ArrayList<Book> bookList ){
-        for ( Book b: bookList){
-            for (Category c: categoryList){
-                if(b.categoryId == c.id){
-                    c.addBook(b);
-                }
-            }
-        }
+    public static Category getCategory(int categoryId){
+        return Library.categoryMap.get(categoryId);
     }
+    public int getId(){
+        return this.id;
+    }
+    public String getName(){
+        return this.name;
+    }
+
 }
