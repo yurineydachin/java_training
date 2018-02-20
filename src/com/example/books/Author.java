@@ -6,6 +6,8 @@ public class Author implements BookContainer{
     public int id;
     public String name;
     private ArrayList<Book> books = new ArrayList<Book>();
+
+
     public Author(int id, String name){
         this.name = name;
         this.id = id;
@@ -15,9 +17,10 @@ public class Author implements BookContainer{
        // acountSalaryForBook( book);
     }
 
-
-
     public  ArrayList<Book> getBooks() {
         return  this.books;
+    }
+    public static Author getAuthor(Book book){
+        return Library.authorsMap.get(book.authorId);
     }
 }

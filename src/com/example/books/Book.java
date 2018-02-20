@@ -4,21 +4,22 @@ public class Book {
 
     public  String name;
     public  int year;
-    public Author author;
-    public  String category;
-    public  int categoryId;
     public int pageCount;
-    public  Publisher publisher;
+    //public Author author;
+    public  int authorId;
+    //public  String category;
+    public  int categoryId;
+    //public  Publisher publisher;
+    public  int publisherId;
 
-    public  Book(String name, int year, Author author, String category, int categoryId, int pageCount, Publisher publisher ){
+    public  Book(String name, int year, int pageCount, int authorId, int categoryId, int publisherIdr ){
         this.name = name;
         this.year = year;
-        this.author = author;
-        this.category = category;
-        this.categoryId = categoryId;
         this.pageCount = pageCount;
-        this.publisher  = publisher;
-        this.author.addBook(this );
+        this.authorId = authorId;
+        this.categoryId = categoryId;
+        this.publisherId = publisherIdr;
+        this.getAuthor(this).addBook(this );
         this.publisher.addBook(this);
     }
     public int calcPrice( ){
