@@ -21,7 +21,6 @@ public class Author implements BookContainer{
         return  this.books;
     }
     public static Author getAuthor(int authorId){
-
         return Library.authorsMap.get(authorId);
     }
     public int getId(){

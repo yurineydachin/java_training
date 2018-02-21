@@ -4,24 +4,23 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Library {
-    public static HashMap<Integer, Author> authorsMap ;
-    public  static HashMap<Integer, Category> categoryMap;
-    public  static HashMap<Integer, Publisher> publishersMap;
+    public static HashMap<Integer, Author> authorsMap  = new HashMap<>();
+    public  static HashMap<Integer, Category> categoryMap = new HashMap<>();
+    public  static HashMap<Integer, Publisher> publishersMap = new HashMap<>();
     public static void main(String[] argv){
 
-        HashMap<Integer, Author> authorsMap = new HashMap<>();
         authorsMap.put(0, new Author(0, "Пушкин"));
         authorsMap.put(1, new Author(1, "Маршак"));
         authorsMap.put(2, new Author(2, "Булгаков"));
         authorsMap.put(3, new Author(3, "Достоевский"));
 
-        HashMap<Integer, Category> categoryMap = new HashMap<>();
+
         categoryMap.put(0, new Category("Сказки", 0));
         categoryMap.put(1, new Category("Роман", 1));
         categoryMap.put(2, new Category("Стихи", 2));
         categoryMap.put(3, new Category("Драма", 3));
 
-        HashMap<Integer, Publisher> publishersMap = new HashMap<>();
+
         publishersMap.put(0, new Publisher(0, "Семечко", 60));
         publishersMap.put(1, new Publisher(1, "Бубн", 65));
 
@@ -36,7 +35,7 @@ public class Library {
 
 
 
-
+        //System.out.println(authorsMap.get(0));
 
         print.printYearReport(bookLst);
         print.printCategoryReport( categoryMap);
