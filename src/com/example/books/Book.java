@@ -33,13 +33,17 @@ public class Book {
         return this.pageCount;
     }
     public Author getAuthor(){
-
-        return Author.getAuthor(this.authorId);
+        return Regestry.getInstance().getAuthor(this.authorId);
     }
     public Category getCategory(){
-        return Category.getCategory(this.categoryId);
+        return Regestry.getInstance().getCategory(this.categoryId);
     }
     public Publisher getPublisher(){
-        return Publisher.getPublisher(this.publisherId);
+        return Regestry.getInstance().getPublisher(this.publisherId);
+    }
+    //"Book: Little mermaid, pages: 234, year: 2008, Category: Tales, Author: Pushkin, Publisher: RosBook"
+    public String toString(){
+
+        return "Book: " + name + ", pages: " + pageCount + ", year: " + year + ", Categor: " +  getCategory() + ", Author: " + getAuthor() + ", Publisher: " + getPublisher();
     }
 }

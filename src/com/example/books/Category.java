@@ -11,6 +11,12 @@ public class Category implements BookContainer {
         this.name = name;
         this.id = id;
     }
+    public int getId(){
+        return this.id;
+    }
+    public String getName(){
+        return this.name;
+    }
     public void addBook(Book b){
         this.books.add(b);
     }
@@ -21,14 +27,13 @@ public class Category implements BookContainer {
        return getBooks().size();
 
     }
-    public static Category getCategory(int categoryId){
-        return Library.categoryMap.get(categoryId);
+    public String toString(){
+        if (name != null && id != 0) {
+            return "Category " + id + ": " + name;
+        }
+        return "Category is empty";
     }
-    public int getId(){
-        return this.id;
-    }
-    public String getName(){
-        return this.name;
-    }
+
+
 
 }

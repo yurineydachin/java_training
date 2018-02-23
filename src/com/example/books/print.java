@@ -6,9 +6,9 @@ import java.util.HashMap;
 public class print {
     static void printYearReport(ArrayList<Book> bookList){
         // int k = 1;
-        HashMap<Integer, Integer> year = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> year = new HashMap<>();
         for (Book b: bookList){
-            if (year.containsKey(b.getYear()) == true) {
+            if (year.containsKey(b.getYear())) {
                 year.put(b.getYear(), year.get(b.getYear())+ 1 );
             }
             else {
@@ -32,9 +32,9 @@ public class print {
     // group by author
     static HashMap<String, Integer> printAuthorReport(ArrayList<Book> bookList){
 
-        HashMap<String, Integer> authors = new HashMap<String, Integer>();
+        HashMap<String, Integer> authors = new HashMap<>();
         for (Book b: bookList){
-            if (authors.containsKey(b.getAuthor().getName()) == true) {
+            if (authors.containsKey(b.getAuthor().getName())) {
                 authors.put(b.getAuthor().getName(), authors.get(b.getAuthor().getName())+ 1 );
             }
             else {
@@ -51,9 +51,9 @@ public class print {
 
     // groub by author and year and show only if author has more then 2 books
     static void printAuthorHaveBookMore2(ArrayList<Book> bookList){
-        HashMap<String, Integer> authors = new HashMap<String, Integer>();
+        HashMap<String, Integer> authors = new HashMap<>();
         for (Book b: bookList){
-            if (authors.containsKey(b.getAuthor().getName() +": " + b.getYear()) == true) {
+            if (authors.containsKey(b.getAuthor().getName() +": " + b.getYear())) {
                 authors.put(b.getAuthor().getName() +": " + b.getYear(), authors.get(b.getAuthor().getName() +": " + b.getYear())+ 1 );
             }
             else {
@@ -77,7 +77,7 @@ public class print {
             booksTotalPrice = booksTotalPrice + priceForBook;
 
         }
-        System.out.println("Зар.плата за все кники автора: "  + " " + booksTotalPrice);
+        System.out.println("Стоимость всех книг : "  + booksTotalPrice + " для " +obj);
         return booksTotalPrice;
     }
 }
