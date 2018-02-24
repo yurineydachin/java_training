@@ -7,29 +7,29 @@ public class Library {
 
     public static void main(String[] argv){
         Regestry r = Regestry.getInstance();
-        r.addAuthor(new Author(0, "Пушкин"));
-        r.addAuthor( new Author(1, "Маршак"));
-        r.addAuthor( new Author(2, "Булгаков"));
-        r.addAuthor( new Author(3, "Достоевский"));
+        r.addAuthor(new Author(1, "Пушкин"));
+        r.addAuthor( new Author(2, "Маршак"));
+        r.addAuthor( new Author(3, "Булгаков"));
+        r.addAuthor( new Author(4, "Достоевский"));
 
 
-        r.addCategory(new Category("Сказки", 0));
-        r.addCategory(new Category("Роман", 1));
-        r.addCategory( new Category("Стихи", 2));
-        r.addCategory( new Category("Драма", 3));
+        r.addCategory(new Category("Сказки", 1));
+        r.addCategory(new Category("Роман", 2));
+        r.addCategory( new Category("Стихи", 3));
+        r.addCategory( new Category("Драма", 4));
 
 
-        r.addPublisher(  new Publisher(0, "Семечко", 60));
-        r.addPublisher( new Publisher(1, "Бубн", 65));
+        r.addPublisher(  new Publisher(1, "Семечко", 60));
+        r.addPublisher( new Publisher(2, "Бубн", 65));
 
 
 
         ArrayList<Book> bookLst = new ArrayList<>();
-        bookLst.add(new Book("Белоснежка", 2001, 100, 0, 0, 0));
-        bookLst.add(new Book("Чипполино", 1996, 150, 1, 0, 1));
-        bookLst.add(new Book("Мастер и Маргарита", 1972, 300, 2, 1, 0));
-        bookLst.add(new Book("Стихи Пушкина", 2001, 180 , 0, 2, 0));
-        bookLst.add(new Book("Преступление и наказание", 2018,247, 3, 3, 1));
+        bookLst.add(new Book("Белоснежка", 2001, 100, 1, 1, 1));
+        bookLst.add(new Book("Чипполино", 1996, 150, 2, 1, 2));
+        bookLst.add(new Book("Мастер и Маргарита", 1972, 300, 3, 2, 1));
+        bookLst.add(new Book("Стихи Пушкина", 2001, 180 , 1, 3, 1));
+        bookLst.add(new Book("Преступление и наказание", 2018,247, 4, 4, 2));
 
 
 

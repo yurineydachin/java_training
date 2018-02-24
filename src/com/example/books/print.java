@@ -16,7 +16,7 @@ public class print {
             }
         }
         for(Integer key: year.keySet()){
-            System.out.println( key + ": " + year.get(key));
+            System.out.println("Книги " + key + ": " + year.get(key));
         }
         System.out.println("  ");
     }
@@ -24,7 +24,7 @@ public class print {
 
     static void printCategoryReport(HashMap<Integer, Category> category){
             for (Category c: category.values()){
-                System.out.println(c.getName()+ ": " + c.booksCount());  // use category.booksCount() new method
+                System.out.println(c + ": " + c.booksCount());  // .getName() убрали для применения метода тустринг
              }
         System.out.println("  ");
     }
@@ -72,10 +72,7 @@ public class print {
          int booksTotalPrice = 0;
 
         for( Book book: obj.getBooks()){
-            int priceForBook = book.calcPrice();
-
-            booksTotalPrice = booksTotalPrice + priceForBook;
-
+            booksTotalPrice = booksTotalPrice + book.calcPrice();
         }
         System.out.println("Стоимость всех книг : "  + booksTotalPrice + " для " +obj);
         return booksTotalPrice;
