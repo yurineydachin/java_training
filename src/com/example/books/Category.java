@@ -2,38 +2,23 @@ package com.example.books;
 
 import java.util.ArrayList;
 
-public class Category implements BookContainer {
-    private   String name;
-    private   int id;
-    private ArrayList books = new ArrayList();
+public class Category extends BookContainer {
 
-    public Category(String name, int id){
-        this.name = name;
-        this.id = id;
+    private  int parentId;
+
+
+    public Category(int id, String name, int parentId){
+        super(id,name);
+        this.parentId = parentId;
     }
-    public int getId(){
-        return this.id;
+
+    public int getParentId(){
+        return this.parentId;
     }
-    public String getName(){
-        return this.name;
-    }
-    public void addBook(Book b){
-        this.books.add(b);
-    }
-    public ArrayList<Book> getBooks(){
-        return this.books;
-    }
+
     public int booksCount(){
        return getBooks().size();
 
     }
-    public String toString(){
-        if (name != null && id != 0) {
-            return "Category " + id + ": " + name;
-        }
-        return "Category is empty";
-    }
-
-
 
 }
