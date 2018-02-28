@@ -10,13 +10,13 @@ public class Regestry {
     private static Regestry ourInstance = new Regestry();
 
     public static Regestry getInstance() {
-        return ourInstance;
+        return Regestry.ourInstance;
     }
 
     private Regestry() {
     }
     public  Author getAuthor(int authorId){
-        return authorsMap.get(authorId);
+        return this.authorsMap.get(authorId);
     }
     public  void addAuthor( Author author){
         authorsMap.put(author.getId(), author);
@@ -29,6 +29,7 @@ public class Regestry {
         categoryMap.put(category.getId(), category);
 
     }
+
     public  Publisher getPublisher(int publisherId){
         return publishersMap.get(publisherId);
     }

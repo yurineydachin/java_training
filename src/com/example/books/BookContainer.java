@@ -2,7 +2,7 @@ package com.example.books;
 
 import java.util.ArrayList;
 
-public class BookContainer {
+abstract public class BookContainer {
     private int id;
     private String name;
     private ArrayList<Book> books = new  ArrayList<>();

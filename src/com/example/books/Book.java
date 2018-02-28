@@ -18,6 +18,7 @@ public class Book {
         this.publisherId = publisherId;
         this.getAuthor().addBook(this );
         this.getCategory().addBook(this );
+
         this.getPublisher().addBook(this);
     }
     public int calcPrice( ){
@@ -38,6 +39,7 @@ public class Book {
     public Category getCategory(){
         return Regestry.getInstance().getCategory(this.categoryId);
     }
+
     public Publisher getPublisher(){
         return Regestry.getInstance().getPublisher(this.publisherId);
     }
