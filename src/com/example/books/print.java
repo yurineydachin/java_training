@@ -77,19 +77,11 @@ public class print {
         System.out.println("Стоимость всех книг : "  + booksTotalPrice + " для " +obj);
         return booksTotalPrice;
     }
-    public void treeCategory(HashMap<Integer, Category> category){
+    public static void treeCategory(HashMap<Integer, Category> category){
         for (Category c: category.values()){
             if (c.getParentId() == 0){
-                System.out.println("- " + c.getName());
-                getCategary(c, "- - ");
+                c.getCategary( "- ");
             }
-        }
-     }
-    public  void getCategary (Category c, String s){
-
-        for(Category c1: c.subcategory){
-           System.out.println(s  + c1.getName());
-                getCategary(c1, s + "- ");
         }
      }
 }

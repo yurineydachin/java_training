@@ -51,9 +51,9 @@ public class Library {
         print.booksTotalPrice(r.publishersMap.get(1));
         print.booksTotalPrice(r.authorsMap.get(1));
 
-        print p = new print();
-       p.treeCategory(r.categoryMap);
-
+        //print p = new print();
+       //p.treeCategory(r.categoryMap);
+        print.treeCategory(r.categoryMap);
     }
 
 

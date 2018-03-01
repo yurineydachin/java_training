@@ -3,7 +3,7 @@ package com.example.books;
 import java.util.ArrayList;
 
 public class Category extends BookContainer {
-    ArrayList<Category> subcategory = new ArrayList<>();
+    private ArrayList<Category> subcategory = new ArrayList<>();
     private  int parentId;
 
 
@@ -45,6 +45,12 @@ public class Category extends BookContainer {
         return allBook;
     }
 
+    public  void getCategary (String s){
+        System.out.println(s + this.getName());
+        for(Category c1: this.getSubcategory()){
+            c1.getCategary( s + "- ");
+        }
+    }
 
 
 }
