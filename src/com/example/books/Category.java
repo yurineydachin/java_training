@@ -53,16 +53,17 @@ public class Category extends BookContainer {
         }
     }
 
-    public HashMap<Category, Integer> getChildrenLevelCount(){
+    public int getMaxLevelCount(){
+        int max = 0;
         if (this.subcategory.size()==0){
-            return new HashMap<>();
+            return 0;
         }
-
-        HashMap<Category, Integer> mapSubCategary = new HashMap<>();
         for(Category c: this.subcategory){
-            mapSubCategary.put(c, print.max(c.getChildrenLevelCount()) + 1);
+          if((c.getMaxLevelCount() + 1) > max){
+              max =  c.getMaxLevelCount() + 1;
+          }
         }
-        return mapSubCategary;
+        return max;
     }
 
 }

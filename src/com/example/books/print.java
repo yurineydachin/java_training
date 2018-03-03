@@ -92,7 +92,7 @@ public class print {
         HashMap<Category, Integer> mapRootCategary = new HashMap<>();
         for (Category c : category.values()) {
             if (c.getParentId() == 0) {
-                mapRootCategary.put(c, max(c.getChildrenLevelCount()));
+                mapRootCategary.put(c, c.getMaxLevelCount());
             }
         }
         return max(mapRootCategary);
