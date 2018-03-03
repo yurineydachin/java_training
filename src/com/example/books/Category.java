@@ -1,6 +1,7 @@
 package com.example.books;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Category extends BookContainer {
     private ArrayList<Category> subcategory = new ArrayList<>();
@@ -44,7 +45,7 @@ public class Category extends BookContainer {
         }
         return allBook;
     }
-
+//рисует дерево
     public  void getCategary (String s){
         System.out.println(s + this.getName());
         for(Category c1: this.getSubcategory()){
@@ -52,5 +53,16 @@ public class Category extends BookContainer {
         }
     }
 
+    public HashMap<Category, Integer> getChildrenLevelCount(){
+        if (this.subcategory.size()==0){
+            return new HashMap<>();
+        }
+
+        HashMap<Category, Integer> mapSubCategary = new HashMap<>();
+        for(Category c: this.subcategory){
+            mapSubCategary.put(c, print.max(c.getChildrenLevelCount()) + 1);
+        }
+        return mapSubCategary;
+    }
 
 }

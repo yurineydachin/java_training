@@ -77,11 +77,39 @@ public class print {
         System.out.println("Стоимость всех книг : "  + booksTotalPrice + " для " +obj);
         return booksTotalPrice;
     }
+
+    //рисуем дерево категорий
     public static void treeCategory(HashMap<Integer, Category> category){
         for (Category c: category.values()){
-            if (c.getParentId() == 0){
-                c.getCategary( "- ");
-            }
+                if (c.getParentId() == 0){
+                    c.getCategary( "- ");
+                }
         }
      }
+     //макс. количество уровней категории
+    public static int maxLevelCount(HashMap<Integer, Category> category) {
+
+        HashMap<Category, Integer> mapRootCategary = new HashMap<>();
+        for (Category c : category.values()) {
+            if (c.getParentId() == 0) {
+                mapRootCategary.put(c, max(c.getChildrenLevelCount()));
+            }
+        }
+        return max(mapRootCategary);
+    }
+
+
+    public static int max(HashMap<Category, Integer> map){
+        if (map.size()==0) {
+            return 0;
+        }
+        int max =0;
+       // max =  map.values().get(0);
+        for(int level: map.values()) {
+            if (level > max) {
+                max = level;
+            }
+        }
+        return max;
+    }
 }
