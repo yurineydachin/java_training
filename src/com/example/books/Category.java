@@ -65,5 +65,11 @@ public class Category extends BookContainer {
         }
         return max;
     }
+    public String getPathForCategory(){
 
+        if (this.getParent() == null){
+            return this.getName();
+        }
+        return this.getParent().getPathForCategory() + " / " + this.getName();
+    }
 }

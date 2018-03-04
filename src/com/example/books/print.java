@@ -112,4 +112,8 @@ public class print {
         }
         return max;
     }
+
+    public static void pathForBook(Book book){
+       System.out.println(book.getName() + ":" + book.getCategory().getPathForCategory());
+    }
 }
