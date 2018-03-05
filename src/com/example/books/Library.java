@@ -56,6 +56,9 @@ public class Library {
         print.treeCategory(r.categoryMap);
         System.out.println("maxLevelCount " + print.maxLevelCount(r.categoryMap));
         print.pathForBook(bookLst.get(1));
+        print.RootCategoryForCurrent(r.categoryMap.get(7));
+        print.treeCategoryForCurrent(bookLst.get(0));
+
     }
 
 

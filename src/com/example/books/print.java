@@ -82,7 +82,7 @@ public class print {
     public static void treeCategory(HashMap<Integer, Category> category){
         for (Category c: category.values()){
                 if (c.getParentId() == 0){
-                    c.getCategary( "- ");
+                    c.printTreeCategory( "- ");
                 }
         }
      }
@@ -115,5 +115,13 @@ public class print {
 
     public static void pathForBook(Book book){
        System.out.println(book.getName() + ":" + book.getCategory().getPathForCategory());
+    }
+
+
+    public static void RootCategoryForCurrent(Category cat){
+        System.out.println("Главная категория для " + cat.getName() +": "+ cat.getRoot().getName());
+    }
+    public static void treeCategoryForCurrent(Book book){
+        book.getCategory().getRoot().printTreeCategory(" - ");
     }
 }

@@ -46,10 +46,10 @@ public class Category extends BookContainer {
         return allBook;
     }
 //рисует дерево
-    public  void getCategary (String s){
+    public  void printTreeCategory (String s){
         System.out.println(s + this.getName());
         for(Category c1: this.getSubcategory()){
-            c1.getCategary( s + "- ");
+            c1.printTreeCategory( s + "- ");
         }
     }
 
@@ -59,8 +59,9 @@ public class Category extends BookContainer {
             return 0;
         }
         for(Category c: this.subcategory){
-          if((c.getMaxLevelCount() + 1) > max){
-              max =  c.getMaxLevelCount() + 1;
+           int maxLev = c.getMaxLevelCount();
+          if((maxLev + 1) > max){
+              max =  maxLev + 1;
           }
         }
         return max;
@@ -72,4 +73,11 @@ public class Category extends BookContainer {
         }
         return this.getParent().getPathForCategory() + " / " + this.getName();
     }
+    public Category getRoot(){
+        if (this.getParent() == null){
+            return this;
+        }
+        return this.getParent().getRoot();
+    }
+
 }
