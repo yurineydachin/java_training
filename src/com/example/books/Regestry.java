@@ -3,14 +3,22 @@ package com.example.books;
 import java.util.HashMap;
 
 public class Regestry {
-    public  HashMap<Integer, Author> authorsMap  = new HashMap<>();
-    public   HashMap<Integer, Category> categoryMap = new HashMap<>();
-    public   HashMap<Integer, Publisher> publishersMap = new HashMap<>();
+    private   HashMap<Integer, Author> authorsMap  = new HashMap<>();
+    private    HashMap<Integer, Category> categoryMap = new HashMap<>();
+    private    HashMap<Integer, Publisher> publishersMap = new HashMap<>();
+    private    HashMap<Integer, Publication> publicationMap = new HashMap<>();
 
-    private static Regestry ourInstance = new Regestry();
+    private static Regestry ourInstance;
 
     public static Regestry getInstance() {
+        if (ourInstance == null) {
+            ourInstance = new Regestry();
+        }
         return Regestry.ourInstance;
+    }
+
+    public static void clear() {
+        ourInstance = null;
     }
 
     private Regestry() {
@@ -37,5 +45,11 @@ public class Regestry {
         publishersMap.put(publisher.getId(), publisher);
 
     }
+    public  Publication getPublication(int publicationId){
+        return publicationMap.get(publicationId);
+    }
+    public  void addPublication( Publication publication) {
+        publicationMap.put(publication.getId(), publication);
 
+    }
 }

@@ -22,8 +22,8 @@ public class print {
     }
 
 
-    static void printCategoryReport(HashMap<Integer, Category> category){
-            for (Category c: category.values()){
+    static void printCategoryReport(ArrayList<Category> category){
+            for (Category c: category){
                 System.out.println(c + ": " + c.booksCount());  // .getName() убрали для применения метода тустринг
              }
         System.out.println("  ");
@@ -68,29 +68,29 @@ public class print {
         //return authors;
         System.out.println("  ");
     }
-    static public int booksTotalPrice(BookContainer obj){
+    static public int booksTotalPrice(PublicationContainer obj){
          int booksTotalPrice = 0;
 
-        for( Book book: obj.getBooks()){
-            booksTotalPrice = booksTotalPrice + book.calcPrice();
+        for( Publication p: obj.getPublications()){
+            booksTotalPrice = booksTotalPrice + p.calcPrice();
         }
         System.out.println("Стоимость всех книг : "  + booksTotalPrice + " для " +obj);
         return booksTotalPrice;
     }
 
     //рисуем дерево категорий
-    public static void treeCategory(HashMap<Integer, Category> category){
-        for (Category c: category.values()){
+    public static void treeCategory(ArrayList<Category> category){
+        for (Category c: category){
                 if (c.getParentId() == 0){
                     c.printTreeCategory( "- ");
                 }
         }
      }
      //макс. количество уровней категории
-    public static int maxLevelCount(HashMap<Integer, Category> category) {
+    public static int maxLevelCount(ArrayList<Category> category) {
 
         HashMap<Category, Integer> mapRootCategary = new HashMap<>();
-        for (Category c : category.values()) {
+        for (Category c : category) {
             if (c.getParentId() == 0) {
                 mapRootCategary.put(c, c.getMaxLevelCount());
             }

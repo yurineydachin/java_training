@@ -1,9 +1,8 @@
 package com.example.books;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
-public class Category extends BookContainer {
+public class Category extends PublicationContainer {
     private ArrayList<Category> subcategory = new ArrayList<>();
     private  int parentId;
 
@@ -13,6 +12,7 @@ public class Category extends BookContainer {
         this.parentId = parentId;
         if(this.getParent() != null){
         this.getParent().addSubCategory(this);}
+        Regestry.getInstance().addCategory(this);
     }
 
     public  int getParentId(){
@@ -22,7 +22,7 @@ public class Category extends BookContainer {
         return this.subcategory;
     }
     public int booksCount(){
-       return this.getBooks().size();
+       return this.getPublications().size();
 
     }
 
@@ -32,18 +32,18 @@ public class Category extends BookContainer {
     public void addSubCategory(Category category){
         this.subcategory.add(category);
     }
-    public ArrayList<Book> getBooks(){
+    public ArrayList<Publication> getPublications(){
 
-        ArrayList<Book> allBook = new ArrayList<>();
-         for(Book b: super.getBooks()) {
-             allBook.add(b);
+        ArrayList<Publication> allPub = new ArrayList<>();
+         for(Publication p: super.getPublications()) {
+             allPub.add(p);
          }
         for(Category c: this.subcategory){
-            for (Book b: c.getBooks()){
-                allBook.add(b);
+            for (Publication p: c.getPublications()){
+                allPub.add(p);
             }
         }
-        return allBook;
+        return allPub;
     }
 //рисует дерево
     public  void printTreeCategory (String s){
@@ -59,10 +59,10 @@ public class Category extends BookContainer {
             return 0;
         }
         for(Category c: this.subcategory){
-           int maxLev = c.getMaxLevelCount();
-          if((maxLev + 1) > max){
-              max =  maxLev + 1;
-          }
+            int maxLev = c.getMaxLevelCount();
+            if((maxLev + 1) > max){
+                max =  maxLev + 1;
+            }
         }
         return max;
     }

@@ -2,12 +2,12 @@ package com.example.books;
 
 import java.util.ArrayList;
 
-abstract public class BookContainer {
+abstract public class PublicationContainer {
     private int id;
     private String name;
-    private ArrayList<Book> books = new  ArrayList<>();
+    private ArrayList<Publication> publications = new  ArrayList<>();
 
-    public BookContainer(int id, String name){
+    public PublicationContainer(int id, String name){
         this.id = id;
         this.name = name;
 
@@ -18,11 +18,11 @@ abstract public class BookContainer {
     public String getName(){
         return this.name;
     }
-    public void addBook(Book book){
-        this.books.add(book);
+    public void addPublication(Publication p){
+        this.publications.add(p);
     }
-    public ArrayList<Book> getBooks(){
-        return this.books;
+    public ArrayList<Publication> getPublications(){
+        return this.publications;
     }
     public String toString(){
         if (name != null && id != 0) {
