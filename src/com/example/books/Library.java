@@ -38,22 +38,22 @@ public class Library {
 
 
         ArrayList<Book> bookLst = new ArrayList<>();
-        bookLst.add(new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0));
-        bookLst.add(new Book(2,"Чипполино", 1996, 150, 2, 12, 2,0));
-        bookLst.add(new Book(3,"Мастер и Маргарита", 1972, 300, 3, 10, 1,0));
-        bookLst.add(new Book(4,"Стихи Пушкина", 2001, 180 , 1, 3, 1,0));
-        bookLst.add(new Book(5,"Преступление и наказание", 2018,247, 4, 4, 2,0));
+        bookLst.add(new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0,1));
+        bookLst.add(new Book(2,"Чипполино", 1996, 150, 2, 12, 2,0,1));
+        bookLst.add(new Book(3,"Мастер и Маргарита", 1972, 300, 3, 10, 1,0,2));
+        bookLst.add(new Book(4,"Стихи Пушкина", 2001, 180 , 1, 3, 1,0,1));
+        bookLst.add(new Book(5,"Преступление и наказание", 2018,247, 4, 4, 2,0,2));
 
         ArrayList<Newspaper> NewspaperList = new ArrayList<>();
-        NewspaperList.add(new Newspaper(6, "Вестник", 2018,10,5,13, 3,0));
-        NewspaperList.add(new Newspaper(7, "Мурзилка",2017, 17, 6, 5, 3,0));
-        NewspaperList.add(new Newspaper(8, "Около дома", 2018,24,5,13, 3, 0));
+        NewspaperList.add(new Newspaper(6, "Вестник", 2018,10,5,13, 3,0,1));
+        NewspaperList.add(new Newspaper(7, "Мурзилка",2017, 17, 6, 5, 3,0,1));
+        NewspaperList.add(new Newspaper(8, "Около дома", 2018,24,5,13, 3, 0,1));
 
         ArrayList<Article> ArticleList = new ArrayList<>();
-        ArticleList.add(new Article(9, "Что произошло на этой недели ", 2018,3,5,13, 3,6));
-        ArticleList.add(new Article(10, "Герои Лунтика расскаывают новую историю",2017, 2, 6, 5, 3,7));
-        ArticleList.add(new Article(11, "Проблемы жкх", 2018,1,5,13, 3, 8));
-        ArticleList.add(new Article(12, "Мировые новости ", 2018,1,5,13, 3,6));
+        ArticleList.add(new Article(9, "Что произошло на этой недели ", 2018,3,5,13, 3,6,1));
+        ArticleList.add(new Article(10, "Герои Лунтика расскаывают новую историю",2017, 2, 6, 5, 3,7,1));
+        ArticleList.add(new Article(11, "Проблемы жкх", 2018,1,5,13, 3, 8,1));
+        ArticleList.add(new Article(12, "Мировые новости ", 2018,1,5,13, 3,6,1));
 
 
         //System.out.println(authorsMap.get(0));

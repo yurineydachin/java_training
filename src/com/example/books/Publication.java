@@ -11,9 +11,10 @@ public abstract class Publication {
     private   int categoryId;
     private   int publisherId;
     private  int parentId;
+    private int contractId;
     public ArrayList<Publication> subpublication = new ArrayList<>();
 
-    public  Publication(int id, String name, int year, int pageCount, int authorId, int categoryId, int publisherId, int parentId){
+    public  Publication(int id, String name, int year, int pageCount, int authorId, int categoryId, int publisherId, int parentId, int contractId){
         this.id = id;
         this.name = name;
         this.year = year;
@@ -22,6 +23,7 @@ public abstract class Publication {
         this.categoryId = categoryId;
         this.publisherId = publisherId;
         this.parentId = parentId;
+        this.contractId = contractId;
         if (parentId != 0)
             this.getParent().addSubPublication(this);
         Regestry.getInstance().addPublication(this);

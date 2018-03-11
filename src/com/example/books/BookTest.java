@@ -14,7 +14,7 @@ class BookTest {
         new Author(1, "Пушкин");
         new Category( 11,"Сказки зарубежные добрые", 0);
         new Publisher(1, "Семечко", 60);
-        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0);
+        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0,1);
 
         assertEquals(b.getName(), "Белоснежка");
     }
@@ -24,8 +24,8 @@ class BookTest {
         new Author(1, "Пушкин");
         new Category( 11,"Сказки зарубежные добрые", 0);
         new Publisher(1, "Семечко", 60);
-        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0);
-        Book b2 = new Book(2,"Белоснежка1", 2001, 70, 1, 11, 1,1);
+        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0,1);
+        Book b2 = new Book(2,"Белоснежка1", 2001, 70, 1, 11, 1,1,1);
 
         assertEquals(b2.getParent(), b);
     }
@@ -35,7 +35,7 @@ class BookTest {
         new Author(1, "Пушкин");
         new Category( 11,"Сказки зарубежные добрые", 0);
         new Publisher(1, "Семечко", 60);
-        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0);
+        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0,1);
 
         assertEquals(b.getPageCount(), 100);
         assertEquals(b.getPublisher().getPagePrice(), 60);
@@ -47,8 +47,8 @@ class BookTest {
         new Author(1, "Пушкин");
         new Category( 11,"Сказки зарубежные добрые", 0);
         new Publisher(1, "Семечко", 60);
-        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0);
-        Book b2 = new Book(2,"Белоснежка", 2001, 70, 1, 11, 1,1);
+        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0,1);
+        Book b2 = new Book(2,"Белоснежка", 2001, 70, 1, 11, 1,1,1);
 
         assertEquals(b.getPageCount(), 100);
         assertEquals(b.getPublisher().getPagePrice(), 60);
@@ -59,9 +59,9 @@ class BookTest {
         new Author(1, "Пушкин");
         new Category( 11,"Сказки зарубежные добрые", 0);
         new Publisher(1, "Семечко", 60);
-        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0);
-        Book b2 = new Book(2,"Белоснежка", 2001, 100, 1, 11, 1,1);
-        Book b3 = new Book(3,"Белоснежка", 2001, 100, 1, 11, 1,1);
+        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0,1);
+        Book b2 = new Book(2,"Белоснежка", 2001, 100, 1, 11, 1,1,1);
+        Book b3 = new Book(3,"Белоснежка", 2001, 100, 1, 11, 1,1,1);
 
         assertEquals(b.getPageCount(), 100);
         assertEquals(b.getPublisher().getPagePrice(), 60);
@@ -72,11 +72,11 @@ class BookTest {
         new Author(1, "Пушкин");
         new Category( 11,"Сказки зарубежные добрые", 0);
         new Publisher(1, "Семечко", 60);
-        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0);
-        Book b2 = new Book(2,"Белоснежка", 2001, 100, 1, 11, 1,1);
-        Book b3 = new Book(3,"Белоснежка", 2001, 100, 1, 11, 1,1);
-        Book b4 = new Book(4,"Белоснежка", 2001, 100, 1, 11, 1,3);
-        Book b5 = new Book(5,"Белоснежка", 2001, 100, 1, 11, 1,3);
+        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0,1);
+        Book b2 = new Book(2,"Белоснежка", 2001, 100, 1, 11, 1,1,1);
+        Book b3 = new Book(3,"Белоснежка", 2001, 100, 1, 11, 1,1,1);
+        Book b4 = new Book(4,"Белоснежка", 2001, 100, 1, 11, 1,3,1);
+        Book b5 = new Book(5,"Белоснежка", 2001, 100, 1, 11, 1,3,1);
 
         assertEquals(b.getPageCount(), 100);
         assertEquals(b.getPublisher().getPagePrice(), 60);
@@ -88,7 +88,7 @@ class BookTest {
         Author a = new Author(1, "Пушкин");
         new Category( 11,"Сказки зарубежные добрые", 0);
         new Publisher(1, "Семечко", 60);
-        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0);
+        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0, 1);
 
         assertEquals(b.getAuthor(), a);
 
@@ -99,7 +99,7 @@ class BookTest {
         new Author(1, "Пушкин");
         Category c = new Category( 11,"Сказки зарубежные добрые", 0);
         new Publisher(1, "Семечко", 60);
-        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0);
+        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0, 1);
 
         assertEquals(b.getCategory(), c);
     }
@@ -109,7 +109,7 @@ class BookTest {
         Author a = new Author(1, "Пушкин");
         Category c = new Category( 11,"Сказки зарубежные добрые", 0);
         Publisher p = new Publisher(1, "Семечко", 60);
-        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0);
+        Book b = new Book(1,"Белоснежка", 2001, 100, 1, 11, 1,0,1);
 
         assertEquals(b.getPublisher(), p);
         assertEquals(b.getPublisher().getPublications().size(), 1);

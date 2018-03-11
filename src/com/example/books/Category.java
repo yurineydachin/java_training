@@ -11,7 +11,7 @@ public class Category extends PublicationContainer {
         super(id,name);
         this.parentId = parentId;
         if(this.getParent() != null){
-        this.getParent().addSubCategory(this);}
+            this.getParent().addSubCategory(this);}
         Regestry.getInstance().addCategory(this);
     }
 
