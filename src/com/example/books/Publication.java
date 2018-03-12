@@ -30,6 +30,7 @@ public abstract class Publication {
         this.getAuthor().addPublication(this );
         this.getCategory().addPublication(this );
         this.getPublisher().addPublication(this);
+
     }
     public int getId(){
         return this.id;
@@ -42,6 +43,12 @@ public abstract class Publication {
     }
     public int getPageCount(){
         return this.pageCount;
+    }
+    public int getContractId(){
+        return this.contractId;
+    }
+    public Contract getContract(){
+        return Regestry.getInstance().getContract(this.contractId);
     }
     public Author getAuthor(){
         return Regestry.getInstance().getAuthor(this.authorId);
@@ -60,14 +67,7 @@ public abstract class Publication {
          this.subpublication.add(publication);
     }
     public int calcPrice( ){
-        int k = 0;
-        if(this.subpublication.size() == 0) {
-            return this.getPageCount() * this.getPublisher().getPagePrice();
-        }//rub}
-        for(Publication p: this.subpublication){
-             k =  k + p.calcPrice() ;
-        }
-        return k + this.getPageCount() * this.getPublisher().getPagePrice();
+        return getContract().getPrice(this);
     }
     //"Book: Little mermaid, pages: 234, year: 2008, Category: Tales, Author: Pushkin, Publisher: RosBook"
     public String toString(){

@@ -7,6 +7,7 @@ public class Regestry {
     private    HashMap<Integer, Category> categoryMap = new HashMap<>();
     private    HashMap<Integer, Publisher> publishersMap = new HashMap<>();
     private    HashMap<Integer, Publication> publicationMap = new HashMap<>();
+    private    HashMap<Integer, Contract> contractsMap = new HashMap<>();
 
     private static Regestry ourInstance;
 
@@ -52,4 +53,12 @@ public class Regestry {
         publicationMap.put(publication.getId(), publication);
 
     }
+    public  Contract getContract(int contractId){
+        return contractsMap.get(contractId);
+    }
+    public  void addContract( Contract contract) {
+        contractsMap.put(contract.getId(), contract);
+
+    }
+
 }

@@ -30,59 +30,7 @@ class NewspaperTest {
         assertEquals(b2.getParent(), b);
     }
 
-    @org.junit.jupiter.api.Test
-    void calcPrice1Newspaper() {
-        new Author(1, "Пушкин");
-        new Category( 11,"Сказки зарубежные добрые", 0);
-        new Publisher(1, "Семечко", 60);
-        Newspaper b = new Newspaper(1,"Белоснежка", 2001, 100, 1, 11, 1,0,1);
 
-        assertEquals(b.getPageCount(), 100);
-        assertEquals(b.getPublisher().getPagePrice(), 60);
-        assertEquals(b.calcPrice(), 6000);
-    }
-
-    @org.junit.jupiter.api.Test
-    void calcPrice2Newspaper() {
-        new Author(1, "Пушкин");
-        new Category( 11,"Сказки зарубежные добрые", 0);
-        new Publisher(1, "Семечко", 60);
-        Newspaper b = new Newspaper(1,"Белоснежка", 2001, 100, 1, 11, 1,0,1);
-        Newspaper b2 = new Newspaper(2,"Белоснежка", 2001, 70, 1, 11, 1,1,1);
-
-        assertEquals(b.getPageCount(), 100);
-        assertEquals(b.getPublisher().getPagePrice(), 60);
-        assertEquals(b.calcPrice(), 10200);
-    }
-    @org.junit.jupiter.api.Test
-    void calcPrice3Newspaper() {
-        new Author(1, "Пушкин");
-        new Category( 11,"Сказки зарубежные добрые", 0);
-        new Publisher(1, "Семечко", 60);
-        Newspaper b = new Newspaper(1,"Белоснежка", 2001, 100, 1, 11, 1,0,1);
-        Newspaper b2 = new Newspaper(2,"Белоснежка", 2001, 100, 1, 11, 1,1,1);
-        Newspaper b3 = new Newspaper(3,"Белоснежка", 2001, 100, 1, 11, 1,1,1);
-
-        assertEquals(b.getPageCount(), 100);
-        assertEquals(b.getPublisher().getPagePrice(), 60);
-        assertEquals(b.calcPrice(), 18000);
-    }
-    @org.junit.jupiter.api.Test
-    void calcPrice4Newspaper() {
-        new Author(1, "Пушкин");
-        new Category( 11,"Сказки зарубежные добрые", 0);
-        new Publisher(1, "Семечко", 60);
-        Newspaper b = new Newspaper(1,"Белоснежка", 2001, 100, 1, 11, 1,0,1);
-        Newspaper b2 = new Newspaper(2,"Белоснежка", 2001, 100, 1, 11, 1,1,1);
-        Newspaper b3 = new Newspaper(3,"Белоснежка", 2001, 100, 1, 11, 1,1,1);
-        Newspaper b4 = new Newspaper(4,"Белоснежка", 2001, 100, 1, 11, 1,3,1);
-        Newspaper b5 = new Newspaper(5,"Белоснежка", 2001, 100, 1, 11, 1,3,1);
-
-        assertEquals(b.getPageCount(), 100);
-        assertEquals(b.getPublisher().getPagePrice(), 60);
-        assertEquals(b.calcPrice(), 30000);
-        assertEquals(b2.calcPrice(), 6000);
-    }
     @org.junit.jupiter.api.Test
     void getAuthor() {
         Regestry r = Regestry.getInstance();
