@@ -2,8 +2,24 @@ package com.example.books;
 
 public class Contract1 extends Contract{
 
-    public Contract1(int id, String name, int pagePrice) {
-        super(id, name, pagePrice);
+    private int id;
+    private String name;
+    private int pagePrice;
+
+    public Contract1(int id, String name, int pagePrice){
+        this.id = id;
+        this.name = name;
+        this.pagePrice = pagePrice;
+        Regestry.getInstance().addContract(this);
+    }
+    public int getId(){
+        return this.id;
+    }
+    public String getName(){
+        return this.name;
+    }
+    public int getPagePrice(){
+        return this.pagePrice;
     }
     public  int getPrice(Publication pub){
         int k = 0;
